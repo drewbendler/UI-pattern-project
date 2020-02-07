@@ -1,7 +1,8 @@
 
 body {
 		background-color: white;
-}
+		margin: 0px;
+	}
 
 
 .container {
@@ -17,47 +18,85 @@ h2, p, button, footer {
 	font-family:'Noto Sans JP', sans-serif;
 }
 
+button {
+	text-align: right;
+
+}
+
 h1 {
 	font-family: 'Cinzel', serif;
+	font-size: 55px;
 }
 
 .banner {
 	grid-row: 1;
 	grid-column: 2 / span 4;
-	padding: 0px;
 	background-color: #b3e0ff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
 }
+
+
+
+.dropbtn {
+	grid-column: 3;
+	grid-row: 1;
+	text-align: left;
+  	color: white;
+  	border: none;
+  	width: 60px;
+   	z-index: 0;
+   	justify-content: space-between;
+   	padding-top: 45px;
+   	height: 45px;
+   	padding-right: 25px;
+   	padding-left: 25px;
+
+}
+
+.dropbtn a {
+	background-color: none;
+	color: white;
+	padding: 25px;
+	border: none;
+	 font-size: 20px;
+
+}
+
+.dropdown-content {
+  display: none;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px;
+  width: 300px;
+  transform: translateX(-250px);
+ 
+}
+
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family:'Noto Sans JP', sans-serif;
+}
+
+.dropdown-content a:hover {background-color: #212121}
+
+.dropbtn:hover .dropdown-content {display: block;}
+
+
 
 h1 {
 	display: inline-block;
 	padding-left: 15px;
 	padding-top: 10px;
-	font-size: 45px;
+	font-size: 65px;
 }
 
-#nav {
-
-	grid-row: 1;
-	grid-column: 5;
-  	display: inline;
-  	cursor: pointer;
-  	padding-right: 35px;
-  	padding-top: 50px;
-  	display: ;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 7px;
-	flex-direction: row;
-
-}
-
-#nav a {
-	display: none;
-}
 
 
 .description {
