@@ -1,6 +1,6 @@
 
 body {
-		background-color: black;
+		background-color: #141414;
 		margin: 0px;
 	}
 
@@ -27,6 +27,12 @@ button {
 #searchBtn {
 	font-size: 15px;
 	border-radius: 5px;
+	font-family: 'Jaldi', sans-serif;
+}
+
+#input {
+	line-height: 2em;
+	display: inline-block;
 }
 
 .banner {
@@ -42,8 +48,9 @@ button {
 .form {
 	grid-column: 3;
 	grid-row: 2;
-	padding-top: 55px;
+	padding-top: 15px;
 	font-size: 20px;
+	font-family: 'Jaldi', sans-serif;
 }
 
 
@@ -189,6 +196,9 @@ footer {
 	text-align: center;
 	padding-top: 27px;
 	font-size: 15px;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
 }
 
 
@@ -238,6 +248,81 @@ footer {
 
 	transform: scale(1.8);
 }
+
+@media screen and (max-width: 1323px) {
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	h3 {
+	margin: 0;
+	font-size: 25px;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.form {
+	padding-top: 15px;
+	font-size: 45px;
+}
+
+
+.description {
+	margin: 35px;
+	padding: 15px;
+	grid-column: 2;
+	grid-row: 2;
+	font-size: 35px;
+	color: white;
+	border: 1px solid #19191a;
+}
+
+p {
+	font-size: 15px;
+	padding: 0px;
+}
+
+
+@media screen and (min-width: 400px) {
+
+
+
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	h3 {
+	margin: 0;
+	font-size: 25px;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.form {
+	padding-top: 15px;
+	font-size: 25px;
+}
+
+
+.description {
+	margin: 5px;
+	padding: 5px;
+	font-size: 25px;
+	color: white;
+	border: 1px solid #19191a;
+}
+
+p {
+	font-size: 15px;
+	padding: 0px;
+}
+
 
 
 
