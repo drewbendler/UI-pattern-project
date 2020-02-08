@@ -15,8 +15,6 @@ body {
 
 
 
-
-
 h2, p, button, footer {
 	font-family: 'Jaldi', sans-serif;
 }
@@ -120,6 +118,12 @@ h1 {
 	padding-top: 40px;
 	font-size: 35px;
 	transition: transform .5s;
+}
+
+
+h1 a {
+	text-decoration: none;
+	color: black;
 }
 
 h1:hover {
