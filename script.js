@@ -11,8 +11,6 @@ let bitcoinUrl = "https://coinranking1.p.rapidapi.com/coin/1";
 
 let ethereumUrl = "https://coinranking1.p.rapidapi.com/coin/2"; 
 
-let allCoinsUrl = "https://coinranking1.p.rapidapi.com/coins";
-
 let rippleUrl = "https://coinranking1.p.rapidapi.com/coin/3";
 
 let litecoinUrl = "https://coinranking1.p.rapidapi.com/coin/7";
@@ -28,6 +26,39 @@ let descripton = document.getElementById('object-description');
 
 let stats = document.getElementById('stats');
 
+        
+let searchBtn = document.getElementById('searchBtn');
+
+searchBtn.addEventListener('click', search);
+
+
+function search (e) {
+  e.preventDefault();
+  let searchBtn = document.getElementById("input");
+  let searchNumb = searchBtn.value;
+  console.log(searchNumb);
+
+  let baseurl = "https://api.coinranking.com/v1/public/coins"
+
+fetch(baseurl).then(res => {
+  return res.json();
+})
+.then(res => {
+
+  console.log('success', res);
+	iconDiv.setAttribute('src', res.data.coins[searchNumb].iconUrl)
+	iconDiv.setAttribute('height', '300')
+let searchTitle = document.getElementById('object-title').innerHTML = res.data.coins[searchNumb].name;
+let searchDescript = document.getElementById('object-description').innerHTML = res.data.coins[searchNumb].description;
+let searchPrice = document.getElementById('price').innerHTML = '$ ' + res.data.coins[searchNumb].price;
+let searchDayChange = document.getElementById('dayChange').innerHTML = res.data.coins[searchNumb].change + '%';
+let searchMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + res.data.coins[searchNumb].marketCap;
+let searchWebsite = document.getElementById('website').innerHTML = res.data.coins[searchNumb].websiteUrl;
+})
+ .catch(err => {
+ 	console.log('failed', err)
+ })
+}         
 
 bitcoinLink.addEventListener('click', displayBitcoin);
 
@@ -219,8 +250,8 @@ let dogecoinWebsite = document.getElementById('website').innerHTML = response.da
 .catch(err => {
 	console.log('failed', err);
 })
-
 }
+
 
 
 
