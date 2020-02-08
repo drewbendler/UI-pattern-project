@@ -5,30 +5,232 @@ let litecoinLink = document.getElementById('link3');
 let rippleLink = document.getElementById('link4');
 let dogecoinLink = document.getElementById('link5');
 
-let baseUrl = "https://rest.coinapi.io/v1/exchanges"; 
+let main = document.querySelector('main')
+
+let bitcoinUrl = "https://coinranking1.p.rapidapi.com/coin/1"; 
+
+let ethereumUrl = "https://coinranking1.p.rapidapi.com/coin/2"; 
+
+let allCoinsUrl = "https://coinranking1.p.rapidapi.com/coins";
+
+let rippleUrl = "https://coinranking1.p.rapidapi.com/coin/3";
+
+let litecoinUrl = "https://coinranking1.p.rapidapi.com/coin/7";
+
+let dogecoinUrl = "https://coinranking1.p.rapidapi.com/coin/20";
+
+// fetch("https://coinranking1.p.rapidapi.com/coins", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+// 		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.log(err);
+// });
+
+
+
 
 let iconDiv = document.getElementById("iconpic");
 
 let descripton = document.getElementById('object-description');
 
-bitcoinLink.addEventListener('click', testFunc);
+bitcoinLink.addEventListener('click', displayBitcoin);
 
-function testFunc (e) {
+ethereumLink.addEventListener('click', displayEthereum);
+
+rippleLink.addEventListener('click', displayRipple);
+
+litecoinLink.addEventListener('click', displayLiteCoin);
+
+dogecoinLink.addEventListener('click', displayDogeCoin);
+
+let coinTitle = document.getElementById('object-title');
+
+
+
+
+fetch("https://coinranking1.p.rapidapi.com/coin/1", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+	}
+
+})
+
+function displayBitcoin (e) {
 	e.preventDefault();
-	console.log('test successful');
-	
+	console.log('success',);
+
+fetch(bitcoinUrl).then(response => {
+	return response.json();
+	console.log(response)
+})
+.then(response => {
+
+	console.log('success', response);
+
+	iconDiv.setAttribute('src', response.data.coin.iconUrl)
+	iconDiv.setAttribute('height', '300')
+let bitcoinTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
+let bitcoinDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
+let bitcoinPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let bitcoinDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
+let bitcoinMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
+let bitcoinWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
+})
+.catch(err => {
+	console.log('failed', err);
+})
+
+}
+fetch("https://coinranking1.p.rapidapi.com/coin/2", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+	}
+
+})
+
+function displayEthereum (e) {
+	e.preventDefault();
+	console.log('success');
+
+fetch(ethereumUrl).then(response => {
+	return response.json();
+})
+.then(response => {
+
+	console.log('success', response);
+
+	iconDiv.setAttribute('src', response.data.coin.iconUrl)
+	iconDiv.setAttribute('height', '300')
+let ethereumTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
+let ethereumDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
+let ethereumPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let ethereumDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
+let ethereumMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
+let ethereumWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
+})
+.catch(err => {
+	console.log('failed', err);
+})
+
+}
+
+fetch("https://coinranking1.p.rapidapi.com/coin/3", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+	}
+
+})
+
+function displayRipple (e) {
+	e.preventDefault();
+	console.log('success');
+
+fetch(rippleUrl).then(response => {
+	return response.json();
+})
+.then(response => {
+
+	console.log('success', response);
+
+	iconDiv.setAttribute('src', response.data.coin.iconUrl)
+	iconDiv.setAttribute('height', '300')
+let rippleTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
+let rippleDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
+let ripplePrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let rippleDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
+let rippleMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
+let rippleWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
+})
+.catch(err => {
+	console.log('failed', err);
+})
+
 }
 
 
 
-fetch('https://rest.coinapi.io/v1/exchanges', {
-    headers: {
-        'x-api-key': 'DF1E61FA-326F-4FFA-BF19-5B31139A6463'
-    }
-});
+fetch("https://coinranking1.p.rapidapi.com/coin/7", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+	}
+
+})
+
+function displayLiteCoin (e) {
+	e.preventDefault();
+	console.log('success');
+
+fetch(litecoinUrl).then(response => {
+	return response.json();
+})
+.then(response => {
+
+	console.log('success', response);
+
+	iconDiv.setAttribute('src', response.data.coin.iconUrl)
+	iconDiv.setAttribute('height', '300')
+let rippleTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
+let rippleDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
+let ripplePrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let rippleDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
+let rippleMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
+let rippleWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
+})
+.catch(err => {
+	console.log('failed', err);
+})
+
+}
 
 
+fetch("https://coinranking1.p.rapidapi.com/coin/20", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
+	}
 
+})
 
+function displayDogeCoin (e) {
+	e.preventDefault();
+	console.log('success');
+
+fetch(dogecoinUrl).then(response => {
+	return response.json();
+})
+.then(response => {
+
+	console.log('success', response);
+
+	iconDiv.setAttribute('src', response.data.coin.iconUrl)
+	iconDiv.setAttribute('height', '300')
+let dogecoinTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
+let dogecoinDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
+let dogecoinPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let dogecoinDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
+let dogecoinMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
+let dogecoinWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
+})
+.catch(err => {
+	console.log('failed', err);
+})
+
+}
 
 
