@@ -19,26 +19,15 @@ let litecoinUrl = "https://coinranking1.p.rapidapi.com/coin/7";
 
 let dogecoinUrl = "https://coinranking1.p.rapidapi.com/coin/20";
 
-// fetch("https://coinranking1.p.rapidapi.com/coins", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
-// 		"x-rapidapi-key": "7459b83286mshb816895270d9560p1c7af7jsnfba169e78b6a"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.log(err);
-// });
-
-
-
+let homepageLink = document.getElementById('title');
 
 let iconDiv = document.getElementById("iconpic");
 
 let descripton = document.getElementById('object-description');
+
+
+let stats = document.getElementById('stats');
+
 
 bitcoinLink.addEventListener('click', displayBitcoin);
 
@@ -80,7 +69,7 @@ fetch(bitcoinUrl).then(response => {
 	iconDiv.setAttribute('height', '300')
 let bitcoinTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
 let bitcoinDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
-let bitcoinPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let bitcoinPrice = document.getElementById('price').innerHTML = '$ ' + response.data.coin.price;
 let bitcoinDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
 let bitcoinMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
 let bitcoinWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
@@ -114,7 +103,7 @@ fetch(ethereumUrl).then(response => {
 	iconDiv.setAttribute('height', '300')
 let ethereumTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
 let ethereumDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
-let ethereumPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let ethereumPrice = document.getElementById('price').innerHTML = '$ ' + response.data.coin.price;
 let ethereumDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
 let ethereumMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
 let ethereumWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
@@ -149,7 +138,7 @@ fetch(rippleUrl).then(response => {
 	iconDiv.setAttribute('height', '300')
 let rippleTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
 let rippleDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
-let ripplePrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let ripplePrice = document.getElementById('price').innerHTML = '$ ' + response.data.coin.price;
 let rippleDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
 let rippleMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
 let rippleWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
@@ -186,7 +175,7 @@ fetch(litecoinUrl).then(response => {
 	iconDiv.setAttribute('height', '300')
 let rippleTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
 let rippleDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
-let ripplePrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let ripplePrice = document.getElementById('price').innerHTML = '$ ' + response.data.coin.price;
 let rippleDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
 let rippleMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
 let rippleWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
@@ -222,7 +211,7 @@ fetch(dogecoinUrl).then(response => {
 	iconDiv.setAttribute('height', '300')
 let dogecoinTitle = document.getElementById('object-title').innerHTML = response.data.coin.name;
 let dogecoinDescript = document.getElementById('object-description').innerHTML = response.data.coin.description;
-let dogecoinPrice = document.getElementById('price').innerHTML = response.data.coin.price;
+let dogecoinPrice = document.getElementById('price').innerHTML = '$ ' + response.data.coin.price;
 let dogecoinDayChange = document.getElementById('dayChange').innerHTML = response.data.coin.change + '%';
 let dogecoinMarketCap = document.getElementById('marketCap').innerHTML = '$ ' + response.data.coin.marketCap;
 let dogecoinWebsite = document.getElementById('website').innerHTML = response.data.coin.websiteUrl;
@@ -232,5 +221,7 @@ let dogecoinWebsite = document.getElementById('website').innerHTML = response.da
 })
 
 }
+
+
 
 
