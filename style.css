@@ -12,9 +12,12 @@ body {
 
 }
 
+h2, label {
+	font-family: 'Teko', sans-serif;
+}
 
 
-h2, p, button, footer {
+p, footer {
 	font-family: 'Jaldi', sans-serif;
 }
 
