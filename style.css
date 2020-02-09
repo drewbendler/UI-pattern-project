@@ -83,24 +83,29 @@ button {
   padding: 0px;
   width: 300px;
   transform: translateX(-250px);
+
+
  
 }
 
 
 .dropdown-content a {
   color: white;
-  padding: 20px 16px;
+  padding: 15px;
   text-decoration: none;
   display: block;
   font-family: 'Jaldi', sans-serif;
 
 }
 
-.dropdown-content a:hover {background-color: #525252;}
+.dropdown-content a:hover {
+	background-color: #525252;
+}
 
 
-.dropbtn:hover .dropdown-content { display: block;}
 
+.dropbtn:hover .dropdown-content { display: block;
+}
 .hamburger {
 	transition: transform .3s;
 }
