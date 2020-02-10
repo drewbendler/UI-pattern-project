@@ -44,7 +44,7 @@ button {
 .form {
 	grid-column: 3;
 	grid-row: 1;
-	padding-top: 15px;
+	padding-top: 30px;
 	font-size: 30px;
 }
 
@@ -185,7 +185,8 @@ h4 {
 	grid-row: 3;
 	font-size: 20px;
 	color: white;
-	border: 1px solid #19191a;
+	border: 2px solid #696969;
+	height: 100%;
 }
 
 main {
@@ -269,7 +270,7 @@ footer {
 	margin: 0px;
 	display: grid;
 	grid-template-columns: 0px 0px 1fr 0px 0px;
-	grid-template-rows: 175px 50px 100px 400px 400px 100px;
+	grid-template-rows: 175px 50px 100px 450px 400px 100px;
 
 }
 
@@ -326,6 +327,9 @@ h2 {
 
 }
 
+h3 {
+	line-height: 1em;
+}
 
 footer {
 	position: fixed;
