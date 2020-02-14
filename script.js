@@ -35,7 +35,7 @@ searchBtn.addEventListener('click', search);
 function search (e) {
   e.preventDefault();
   let searchBtn = document.getElementById("input");
-  let searchNumb = searchBtn.value;
+  let searchNumb = searchBtn.value; 
   console.log(searchNumb);
 
   let baseurl = "https://api.coinranking.com/v1/public/coins"
